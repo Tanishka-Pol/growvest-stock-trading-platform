@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+
+  background-color: #ffffff;
+  color: #08264A;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Signup */
+
+.signup-container {
+  margin-top: 60px;
+}
+
+.signup-image {
+  width: 90%;
+  max-width: 600px;
+}
+
+.signup-form {
+  padding-left: 30px;
+}
+
+/* Navbar */
+
+.nav-custom {
+  color: white !important;
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: all 0.3s ease;
+}
+
+.nav-custom:hover {
+  color: #22c55e !important;
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+
+.footer-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #22c55e;
+}
+
+/* Support */
+
+#supportHero input {
+  padding: 15px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Global */
+
+a {
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Smooth scrolling */
+
+html {
+  scroll-behavior: smooth;
+}
