@@ -1,30 +1,32 @@
-// SignupForm.js
-
-import React from "react";
+import React, { useState } from "react";
 
 function SignupForm() {
-  return (
-    <>
-    <div
-      style={{
-        background:
-          "linear-gradient(90deg, #051D38 0%, #08264A 50%, #0D3B73 100%)",
-        color: "white",
-        padding: "80px 0",
-      }}
-    ></div>
-      <h2>Signup now</h2>
+  const [mobileNumber, setMobileNumber] = useState("");
 
+  const handleSignup = (e) => {
+    e.preventDefault();
+    
+    // 1. Perform your signup logic / OTP verification here...
+    console.log("Processing signup for:", mobileNumber);
+
+    // 2. Hard redirect to your dashboard's URL
+    // In development, this might be 'http://localhost:3001'
+    window.location.href = "http://localhost:3001/dashboard"; 
+  };
+
+  return (
+    <form onSubmit={handleSignup}>
       <input
         type="text"
         className="form-control"
         placeholder="Enter your mobile number"
+        value={mobileNumber}
+        onChange={(e) => setMobileNumber(e.target.value)}
       />
-
-      <button className="btn btn-primary mt-3">
+      <button type="submit" className="btn btn-primary mt-3">
         Get OTP
       </button>
-    </>
+    </form>
   );
 }
 
