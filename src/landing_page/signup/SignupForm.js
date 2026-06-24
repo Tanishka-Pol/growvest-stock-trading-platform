@@ -1,32 +1,54 @@
 import React, { useState } from "react";
 
 function SignupForm() {
-  const [mobileNumber, setMobileNumber] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSignup = (e) => {
-    e.preventDefault();
+  const handleCreateAccount = (e) => {
+    // 1. CRITICAL: This stops the page from doing a default HTML refresh
+    e.preventDefault(); 
     
-    // 1. Perform your signup logic / OTP verification here...
-    console.log("Processing signup for:", mobileNumber);
+    console.log("Form submitted successfully!");
 
-    // 2. Hard redirect to your dashboard's URL
-    // In development, this might be 'http://localhost:3001'
-    window.location.href = "http://localhost:3001/dashboard"; 
+    // 2. HARD REDIRECT TEST
+    // Switch this to your exact dashboard URL/port (e.g., http://localhost:3001)
+    window.location.href = "https://www.google.com"; 
   };
 
   return (
-    <form onSubmit={handleSignup}>
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Enter your mobile number"
-        value={mobileNumber}
-        onChange={(e) => setMobileNumber(e.target.value)}
-      />
-      <button type="submit" className="btn btn-primary mt-3">
-        Get OTP
-      </button>
-    </form>
+    <div>
+      {/* 3. CRITICAL: Is your onSubmit handler actually placed on the <form> tag? */}
+      <form onSubmit={handleCreateAccount}>
+        <h3>Create Account</h3>
+        
+        <input 
+          type="text" 
+          placeholder="Name" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+          required 
+        />
+        <input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+          required 
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          required 
+        />
+
+        <button type="submit" className="btn btn-success w-100">
+          Create Account
+        </button>
+      </form>
+    </div>
   );
 }
 
