@@ -11,7 +11,6 @@ function OpenAccount() {
       }}
     >
       <div className="row text-center">
-
         <h1
           style={{
             color: "#08264A",
@@ -46,7 +45,6 @@ function OpenAccount() {
             Create Account
           </Link>
         </div>
-
       </div>
     </div>
   );

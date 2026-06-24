@@ -6,48 +6,62 @@ function SignupForm() {
   const [password, setPassword] = useState("");
 
   const handleCreateAccount = (e) => {
-    // 1. CRITICAL: This stops the page from doing a default HTML refresh
-    e.preventDefault(); 
-    
-    console.log("Form submitted successfully!");
+    e.preventDefault();
 
-    // 2. HARD REDIRECT TEST
-    // Switch this to your exact dashboard URL/port (e.g., http://localhost:3001)
-    window.location.href = "https://www.google.com"; 
+    if (!name || !email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    window.location.href = "http://localhost:3001";
   };
 
   return (
-    <div>
-      {/* 3. CRITICAL: Is your onSubmit handler actually placed on the <form> tag? */}
-      <form onSubmit={handleCreateAccount}>
-        <h3>Create Account</h3>
-        
-        <input 
-          type="text" 
-          placeholder="Name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-          required 
-        />
-        <input 
-          type="email" 
-          placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          required 
-        />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          required 
-        />
-
-        <button type="submit" className="btn btn-success w-100">
+    <div className="container mt-5 mb-5">
+      <div
+        className="card p-4 mx-auto shadow"
+        style={{ maxWidth: "500px" }}
+      >
+        <h3 className="text-center mb-4">
           Create Account
-        </button>
-      </form>
+        </h3>
+
+        <form onSubmit={handleCreateAccount}>
+          <input
+            type="text"
+            className="form-control mb-3"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+
+          <input
+            type="email"
+            className="form-control mb-3"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            className="form-control mb-3"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <button
+            type="submit"
+            className="btn btn-success w-100"
+          >
+            Create Account
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
